@@ -15,15 +15,16 @@ from dotenv import load_dotenv
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-host_key_ip=os.getenv("HOST_KEY_IP")
+
 
 load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ca%heb_9wewmw-uo_so!z#gd4yi9+-yw*!abf1%_v$oqd*qit-'
-
+# SECRET_KEY = 'django-insecure-ca%heb_9wewmw-uo_so!z#gd4yi9+-yw*!abf1%_v$oqd*qit-'
+SECRET_KEY = os.getenv("SECRET_KEY")
+host_key_ip=os.getenv("HOST_KEY_IP")
 # SECURITY WARNING: don't run with debug turned on in production!8
 DEBUG = True
 
