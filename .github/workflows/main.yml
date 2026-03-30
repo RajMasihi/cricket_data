@@ -24,7 +24,7 @@ jobs:
       - name: deploy on ec2 server
         run: |
           ssh -i key.pem -o StrictHostKeyChecking=no ubuntu@${{secrets.EC2_IP}} << EOF
-          CAT > /home/ubuntu/.env << ENVEOF
+          cat > /home/ubuntu/.env << ENVEOF
           DOCKER_USERNAME=${{secrets.DOCKER_USERNAME}}
           SECRET_KEY=${{sectrets.SECRET_KEY}}
           DEBUG=False
