@@ -28,11 +28,11 @@ jobs:
           DOCKER_USERNAME=${{secrets.DOCKER_USERNAME}}
           SECRET_KEY=${{secrets.SECRET_KEY}}
           DEBUG=False
-          ENVEOF
-          cd/home/ubuntu
+      ENVEOF
+          cd /home/ubuntu
           docker-compose pull
           docker-compose down 
           docker-compose up -d
           docker image prune -f
-          EOF
-          rm -f key.pem
+        EOF
+        rm -f key.pem
