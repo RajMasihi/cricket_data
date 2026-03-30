@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ data.info.name }}
+{% endblock %}
+{% block content %}
+  data<div class="data_div">
+    {% if data %}
+      <h1><div class="alert alert-heading">{{ data.info.name }}</div></h1>
+          
+      {% for value in data.matchList %}
+          
+        <div class="card align-content-center  mt-4">
+          <div class="card-body bg-body-secondary justify-content-around  d-lg-inline-flex">
+            <div class="justify-content-around d-flex">
+            {% for val in value.teamInfo %}
+              <div>
+                <img src="{{ val.img }}" class="img-fluid rounded-circle" alt="{{ val.name }}" />
+                <h2 class="d-flex">{{ val.name }}</h2>
+                
+              </div>{% if forloop.first %}<p class="fs-3 fw-bold p-3">VS</p>{% endif %}
+            {% endfor %}
+            </div>
+            {% if value.matchStarted and not value.matchEnded %}
+              <p class="fs-3 text-success fw-bold">live</p>
+            {% endif %}
+            
+          </div>
+
+          <div class="card-footer">
+            <h4><a href="{% url 'match_info' value.id %}">{{ value.name }}</a></h4>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}

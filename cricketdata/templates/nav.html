@@ -1,0 +1,18 @@
+
+
+ 
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="alert alert-heading bg-body-secondary fw-bold text-info"><a class="navbar-brand" href="#">Cricket Data</a></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav p-3 align-content-between">
+       <a class="text-decoration-none" href="{% url 'home' %}"><div class="alert alert-primary">Home</div></a> 
+      <a class="text-decoration-none" href="{% url 'serieslist' %}"><div class="alert alert-primary">All series</div></a>
+        <a class="text-decoration-none" href="{% url 'currentmatches' %}"><div class="alert alert-primary">currentMateches</div></a> 
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+  currntmatches
+{% endblock %}
+{% block content %}
+{% if data %}
+ {% for value in data %}
+<div class="card">
+    <div class="card-header">
+       <h3><a href="{% url 'fantacyscorecard' value.id %}">{{value.name}}</a></h3>
+    </div>
+    <div class="card-body">
+         {% for val in value.teamInfo  %}
+        <div class="alert alert-primary d-inline-flex align-content-between">
+            <div ><img src="{{val.img}}" alt="{{val.name}}" class="img-fluid"><h3>{{val.name}}</h3></div> 
+
+        </div>
+        {% endfor %}
+        
+         {% for scor in value.score  %}
+          <div class="alert alert-primary d-inline-flex align-content-between"> <p>score: {{scor.r}} </p><p>wickets:{{scor.w}}</p><p>over : {{scor.o}}</p></div>
+        {% endfor %}
+
+        
+    </div>
+    <div class="card-footer">
+        <h4>{{value.status}}</h4>
+      
+    </div>
+</div><br>
+{% endfor %}
+{% endif %}
+
+{% endblock content %}

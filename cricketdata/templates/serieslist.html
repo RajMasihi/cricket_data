@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Incoming serieses{% endblock title %}
+{% block content %}data
+ 
+  <div class="data_div d-inline-block">
+    <ul>
+ {% if data %}
+
+ {% for value in data  %}
+ <li>
+ 
+    <div class="alert alert-info">
+        <h1 class="d-lg-inline-flex text-info"><a href="{% url 'series_info' value.id %}">{{value.name}} </a><p class="text-muted">startDate :{{value.startDate}}</p></h1>
+        <h2 class="d-inline-flex text-success">total matches: {{value.matches}} - <p>odi: {{value.odi}} </p> <p> T20: {{value.t20}}</p> </h2>
+    </div>
+ </li>
+ {% endfor %}
+ {% endif %}
+</ul>
+</div>
+ 
+{% endblock content %}
