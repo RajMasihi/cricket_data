@@ -24,11 +24,11 @@ load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ca%heb_9wewmw-uo_so!z#gd4yi9+-yw*!abf1%_v$oqd*qit-'
 # SECRET_KEY = os.getenv("SECRET_KEY")
-host_key_ip=os.getenv("HOST_KEY_IP")
-# SECURITY WARNING: don't run with debug turned on in production!8
-DEBUG = True
 
-ALLOWED_HOSTS = ["localhost",host_key_ip]
+# SECURITY WARNING: don't run with debug turned on in production!8
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+ALLOWED_HOSTS =os.getenv("HOST_KEY_IP").split(",")
 TIME_ZONE = 'Asia/Kolkata'
 
 USE_TZ = True
