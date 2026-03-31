@@ -4,8 +4,7 @@ services:
     # build: .
     image: rajmasihi63/cricket_data:latest
     container_name: crickweb
-    volumes:
-      - .:/app
+   
     ports:
       - "8000:8000"
     env_file:
