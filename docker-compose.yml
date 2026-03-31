@@ -1,9 +1,9 @@
 
 services:
   crickweb:
-    build: .
-    # image: rajmasihi63/cricket_data:latest
-    # container_name: crickweb
+    # build: .
+    image: rajmasihi63/cricket_data:latest
+    container_name: crickweb
     volumes:
       - .:/app
     ports:
