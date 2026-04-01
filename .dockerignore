@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+venv/
+env/
+
+
+.env
+
+
+.git
+.gitignore
+
+
+
+db.sqlite3
+
+
+*.log
+
+
+
+
