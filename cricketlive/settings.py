@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ca%heb_9wewmw-uo_so!z#gd4yi9+-yw*!abf1%_v$oqd*qit-
 # SECURITY WARNING: don't run with debug turned on in production!8
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS =os.getenv("HOST_KEY_IP").split(",")
+ALLOWED_HOSTS =os.getenv("EC2_IP")
 TIME_ZONE = 'Asia/Kolkata'
 
 USE_TZ = True
